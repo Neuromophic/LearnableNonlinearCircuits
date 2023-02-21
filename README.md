@@ -10,10 +10,34 @@ Zhao, H.; Hefenbrock, M.;Yang, Z; Beigl, M.; Tahoori, M.
 ```
 
 # Usage of the code
+
+Multiple setups can be found in folder `./LNC/` and can be run by:
+
+* test different training and learning strategies. For trainig strategy, we consider training for weights and nonlinear circuits simultanously (update both parameters in the same epoch) or alternatively (1 epoch for weights, 1 epoch for nonlinear circuits, ...). For learning strategy, we consider differernt learning flexibilities on net-, layer-, and neuron-level.
+
 ~~~
-$ sh traincommand.sh
+$ sh 1.2_command_pNN_strategy.sh
 ~~~
 
-# Additional code
+* training pNNs with variation, but here the variation is applied on auxilary parameter $\eta$, instead of on the circuit components $\omega$.
 
-In addition to the results represented in paper. We also implement the neuron-level and layer-level learnable nonlinear circuits.
+~~~
+$ sh 2.2_command_pNN_variation.sh
+~~~
+
+* training pNNs with variation on the circuit components $\omega$.
+
+~~~
+$ sh 3.2_command_pNN_variation_circuit.sh
+~~~
+
+* training pNNs with same setup in paper.
+
+~~~
+$ sh 4.1_train_for_paper.py
+~~~
+
+
+# Other materials
+
+In `./simulation/` you can find the information and data for simulation of nonlinear circuits as well as the establishment of the surrogate nonlinear circuit model.
